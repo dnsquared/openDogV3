@@ -24,6 +24,7 @@ Our working notes for building James Bruton's openDog V3 (a fork of [XRobots/ope
 **Libraries the firmware needs** (install in Arduino IDE): `ODriveArduino`, `RF24` + `nRF24L01`, `LiquidCrystal_I2C`, `Ramp`, and `MPU6050` + `I2Cdev` (experimental build only). `SPI`/`Wire` ship with Arduino.
 
 ### Docs (`/docs`) — ours
+- `LOG.md` — **start here when you sit back down:** progress tracker + next action
 - `PROJECT.md` — this file
 - `ASSEMBLY.md` — **assembly manual** extracted from the build videos, ordered as build stages
 - `PROVE-OUT.md` — **start here to build:** the cheap single-leg prove-out (3 escalating slices, ~$120 to first motion) with current 2026 sources
