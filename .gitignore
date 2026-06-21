@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Secrets / session data — never commit YouTube cookies or exported sessions
+cookies.txt
+docs/transcripts/**/cookies.txt
+
+# Raw subtitle dumps (we keep the cleaned .md transcripts, not these)
+*.vtt
