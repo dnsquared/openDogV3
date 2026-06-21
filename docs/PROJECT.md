@@ -26,6 +26,7 @@ Our working notes for building James Bruton's openDog V3 (a fork of [XRobots/ope
 ### Docs (`/docs`) — ours
 - `PROJECT.md` — this file
 - `ASSEMBLY.md` — **assembly manual** extracted from the build videos, ordered as build stages
+- `PROVE-OUT.md` — **start here to build:** the cheap single-leg prove-out (3 escalating slices, ~$120 to first motion) with current 2026 sources
 - `BOM.md` — **re-checked bill of materials** (flags the obsolete ODrive v3.6 / Teensy LC)
 - `transcripts/` — raw video transcripts pulled from YouTube (source material for the manual)
 

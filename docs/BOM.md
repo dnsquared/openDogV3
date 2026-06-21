@@ -3,6 +3,8 @@
 Re-checked version of James's original `BOM.ods` (2022). Quantities are from his BOM; the **2026 notes** column flags obsolete parts, dead links, and current alternatives. Verify quantities against the CAD before ordering — treat this as a shopping guide, not gospel.
 
 > ⚠️ **Biggest changes since 2022:** the **ODrive v3.6 is officially NRND** (not recommended for new designs) and the **Teensy LC is effectively discontinued**. See notes below.
+>
+> 🛒 **Just want to start?** Don't buy this whole list. See **`PROVE-OUT.md`** for the ~$120 single-leg slice with current 2026 sources for only the parts you need first.
 
 ## Electronics — the parts that actually went obsolete
 
@@ -34,14 +36,16 @@ Re-checked version of James's original `BOM.ods` (2022). Quantities are from his
 | 4 mm steel bar | 4 mm × 31 mm | 132 | Bearing-mount pins around cycloidal drives. |
 
 ### Bearings
-| Where | Size | Qty |
-|---|---|---|
-| Cycloidal drive internals | 12 OD × 4 ID × 4 | **384** |
-| Cam & cap | 32 OD × 20 ID × 7 | 36 (3/drive) |
-| Top/bottom drive | 85 OD × 65 ID × 10 | 24 (2/drive) |
-| Thin-wall | 37 OD × 30 ID × 4 (61706ZZ) | 8 |
-| Knee | 22 OD × 8 ID × 7 (608ZZ) | 8 |
-| Knee idler | 19 OD × 6 ID × 6 (626ZZ) | 16 |
+Sizes mapped to **standard designations** so you can order from any bearing supplier (cheaper in bulk than the original per-unit links).
+
+| Where | Size (OD×ID×W) | Standard code | Qty |
+|---|---|---|---|
+| Cycloidal drive internals | 12 × 4 × 4 | **604ZZ** | **384** (32/drive) |
+| Cam & cap | 32 × 20 × 7 | **6804ZZ** | 36 (3/drive) |
+| Top/bottom drive | 85 × 65 × 10 | **6813ZZ / 61813** | 24 (2/drive) |
+| Thin-wall (shoulder end) | 37 × 30 × 4 | **61706ZZ** | 8 |
+| Knee / lower-leg ("skate") | 22 × 8 × 7 | **608ZZ** | 8 |
+| Knee idler | 19 × 6 × 6 | **626ZZ** | 16 |
 
 ### Fasteners & nylon
 | Part | Spec | Qty |
