@@ -1,11 +1,11 @@
 # openDog V3 — Single-Leg Prove-Out Guide
 
-The cheap, low-risk way in. James says it outright (V5 @ 13:08, V6 @ 13:51): **don't buy everything — prove one slice first.** This guide breaks that into three escalating slices, each ending in a **go/no-go decision** before you spend more. Total to reach the first real "it moves under control" moment is roughly **$120–180**, not $2000.
+The cheap, low-risk way in. James says it outright (V5 @ 13:08, V6 @ 13:51): **don't buy everything — prove one slice first.** This guide breaks that into three escalating slices, each ending in a **go/no-go decision** before you spend more. Total to reach the first real "it moves under control" moment is roughly **$210–250**, not $2000 (the controller is most of it).
 
 > **Why this order?** The riskiest part of the whole project isn't printing or bolts — it's getting an ODrive to drive a brushless motor using an absolute encoder. So we kill *that* risk first (Slice A) on a bare motor, before any gearbox exists. Then drivetrain (Slice B). Then the firmware (Slice C).
 
 ```
-Slice A  ── electrical ──   1 ODrive + 1 motor + 1 encoder, spinning under control   (~$120)
+Slice A  ── electrical ──   1 ODrive + 1 motor + 1 encoder, spinning under control   (~$230)
    │  go/no-go: can you configure ODrive + AS5047 and hold position?
 Slice B  ── mechanical ──   + 1 more motor/enc + 2 cycloidal drives + belt = a 2-joint test leg
    │  go/no-go: does the drivetrain hold load and back-drive like a spring?
@@ -22,7 +22,7 @@ Slice C  ── firmware ───    build a full 3-axis leg, run openDogV3.ino
 ### Shopping list — Slice A
 | Item | Qty | ~Price | Source (2026) | Notes |
 |---|---|---|---|---|
-| **ODESC** motor driver, 56 V | 1 | ~$55–70 | [Sequre](https://sequremall.com/products/odesc-dual-drive) · [AliExpress](https://www.aliexpress.com/item/1005007734783069.html) | Runs the firmware the repo code targets. **For Slice A a single-drive ODESC V4.2 (~$60, on Amazon) is fine** — same firmware/`odrivetool`, and it doubles as a bench rig for calibrating each motor/encoder later. **But the full robot needs 6× _dual-drive_ ODESC 3.6** (single-drive → 12 boards → exceeds the Teensy's serial ports). Order the dual-drive ones from Sequre/AliExpress at Slice C. See `BOM.md`. |
+| **ODESC 3.6 dual-drive**, 56 V | 1 (buy 2) | ~$100 | [Sequre](https://sequremall.com/products/odesc-dual-drive) · [AliExpress](https://www.aliexpress.com/item/1005007734783069.html) | **These are your final boards** — Slice A runs on the exact hardware you'll build with. **Buying 2 (= 4 axes) covers Slices A–C**; 4 more for the full dog. ~$100 normal (occasional ~$60 sales); **2–3 week shipping, not stocked on Amazon.** Runs the firmware the repo code targets. *Not* the single-drive V4.2 — see the driver decision log in `BOM.md`. |
 | **EaglePower LA-8308 90 KV** motor | 1 | ~$61 | [AliExpress (BDUAV)](https://www.aliexpress.com/item/4000563826414.html) | The motor the dog uses. Buy 1 now; you'll need 12 eventually. |
 | **AS5047P** encoder breakout | 1 | ~$10–18 | [Amazon (Rakstore)](https://www.amazon.com/Rakstore-AS5047P-Encoder-Modulation-Magnetic/dp/B09LTYXB5Z) · [MakerBase](https://makerbase3d.com/product/makerbase-as5047p-doggo-odrive-simplefoc-magnetic-spi-abi-encoder-adapter-board-based-on-as5047p-ts_ek_ab/) · [Tindie](https://www.tindie.com/products/smallrobots/as5047p-encoder-board-for-robots-motor-control/) | Get the "ODrive/SimpleFOC Doggo" variant — same chip James used. |
 | **Diametric magnet**, ~6 mm | 1 | ~$3 | any (often included w/ encoder) | Must be **diametrically** magnetised, glued on the motor shaft centre, ~1 mm from chip. |
@@ -105,9 +105,9 @@ Follow `ASSEMBLY.md` **Stage 1** (build each cycloidal drive — discs, bearings
 ## Rough cost ladder
 | Reach | Adds | Cumulative |
 |---|---|---|
-| Slice A | ODESC + 1 motor + 1 enc + PSU bits | **~$120–150** |
-| Slice B | +1 motor/enc, ~70 bearings, belt, rod, tube, PLA | **~$250–320** |
-| Slice C | +1 ODESC, +1 motor/enc, Teensy 4.1 + remote + radios | **~$420–520** |
-| Full dog | the remaining ~9 motors, 3 ODESC, ~300 bearings, etc. | ~$1.5–2.5k |
+| Slice A | ODESC ($100) + 1 motor + 1 enc + magnet + resistor + jumpers (PSU owned) | **~$210–250** |
+| Slice B | +1 motor/enc, ~70 bearings, belt, rod, tube, PLA, washers/spacers | **~$400–470** |
+| Slice C | +1 ODESC, +1 motor/enc, Teensy 4.1 + remote (Teensy 4.0) + 2 radios + LCD | **~$700–800** |
+| Full dog | the remaining ~9 motors, **4 ODESC**, ~300 bearings, fasteners, batteries, etc. | ~$2–3k |
 
-*(Prices are ballpark mid-2026, USD, ex-shipping. The dual-drive ODESC and bulk bearings are where you save vs the original BOM's per-unit links.)*
+*(Prices are ballpark mid-2026, USD, ex-shipping. The **ODESC dual-drive at ~$100/board is the single biggest line** — 6× ≈ $600 — and the one item not on Amazon. Bulk bearings are where you save vs the original BOM's per-unit links.)*

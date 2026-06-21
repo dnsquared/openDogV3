@@ -4,7 +4,7 @@ Re-checked version of James's original `BOM.ods` (2022). Quantities are from his
 
 > ⚠️ **Biggest changes since 2022:** the **ODrive v3.6 is officially NRND** (not recommended for new designs) and the **Teensy LC is effectively discontinued**. See notes below.
 >
-> 🛒 **Just want to start?** Don't buy this whole list. See **`PROVE-OUT.md`** for the ~$120 single-leg slice with current 2026 sources for only the parts you need first.
+> 🛒 **Just want to start?** Don't buy this whole list. See **`PROVE-OUT.md`** for the ~$230 single-leg slice with current 2026 sources for only the parts you need first.
 
 ## Electronics — the parts that actually went obsolete
 
@@ -25,6 +25,9 @@ Re-checked version of James's original `BOM.ods` (2022). Quantities are from his
 | **Battery (main)** | 6S high-drain LiPo, ~4000 mAh, 60C | 1 | ✅ Must source enough current. Needs a balance charger. |
 | **Battery (electronics)** | 2S/3S small | 1 | ✅ Generic. |
 | **Encoder cable** | 6-core foil-shielded | ~6 m | ✅ Generic shielded signal cable. |
+
+### Driver decision (Jun 2026) — settled
+Going with **ODESC 3.6 dual-drive** clones from Sequre — the drop-in for the obsolete ODrive v3.6 that the repo firmware already targets (zero code rework). **Ordered 2 now** (= 4 axes, enough to carry the whole single-leg prove-out, Slices A–C); 4 more for the full robot. Alternatives evaluated and set aside as too complex/risky for a first iteration: single-drive ODESC V4.2 (12 boards → exceeds Teensy serial ports → CAN rewrite), genuine single-axis ODrive S1 (new firmware + CAN rewrite + ~$2k), and SimpleFOC (you author/tune the drive firmware, and the cheap B-G431B-ESC1 only sustains ~4–8 A vs the dog's 15 A). Revisit single-axis + CAN only if we ever design our own v2.
 
 ## Mechanical / drivetrain (specs don't go obsolete — supplier links may be dead)
 
